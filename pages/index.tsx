@@ -1,14 +1,15 @@
 import Typical from 'react-typical';
-import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { Container, SectionContainer } from '../style/home';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Home() {
-  const { locale } = useRouter();
+  const { t } = useTranslation('home');
   return (
     <Container>
       <SectionContainer>
-        <h3>Olá, me chamo</h3>
-        <h1>Pedro Bennesby</h1>
+        <h3>{t('greeting')}</h3>
+        <h1>{t('name')}</h1>
         <h2>
           <Typical
             loop={Infinity}
@@ -38,4 +39,12 @@ export default function Home() {
       </SectionContainer>
     </Container>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['home'])),
+    },
+  };
 }

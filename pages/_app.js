@@ -1,7 +1,8 @@
 import { GlobalStyles, Theme } from '../style/theme.config';
 import { ThemeProvider } from 'styled-components';
+import { appWithTranslation } from 'next-i18next';
 
-function MyApp({ Component, pageProps }) {
+function MyPortfolio({ Component, pageProps }) {
   return (
     <>
       <GlobalStyles />
@@ -12,4 +13,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyPortfolio);
