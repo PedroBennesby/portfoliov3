@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Typical from 'react-typical';
 import { useTranslation } from 'next-i18next';
-import { Container, SectionContainer } from '../style/home';
+import { Container, SectionContainer } from './styles';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { request } from '../lib/datocms';
