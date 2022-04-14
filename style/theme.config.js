@@ -1,21 +1,23 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const Theme = {
-  background: '#fcfcfc',
-  white: '#fff',
-  black: '#232323',
-  gray50: '#f7f8fa',
-  gray100: '#e6e8eb',
-  gray200: '#afb2b1',
-  gray500: '#808080',
-  gray800: '#494d4b',
-  blue300: '#66adf0',
-  blue400: '#61a5e4',
-  blue500: '#5a9ad5',
-  blue800: '#3f6c96',
-};
-
 export const GlobalStyles = createGlobalStyle`
+:root {
+  --background: #fcfcfc;
+  --white: #fff;
+  --black: #232323;
+
+  --gray-50: #f7f8fa;
+  --gray-100: #e6e8eb;
+  --gray-200: #afb2b1;
+  --gray-500: #808080;
+  --gray-800: #494d4b;
+
+  --blue-300: #66adf0;
+  --blue-400: #61a5e4;
+  --blue-500: #5a9ad5;
+  --blue-800: #3f6c96;
+}
+
 * {
    margin: 0;
   padding: 0;

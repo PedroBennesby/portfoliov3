@@ -16,7 +16,7 @@ export const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  h1 {
+  > h1 {
     font: 700 5rem Poppins, sans-serif;
     white-space: nowrap;
     @media only screen and (min-width: 375px) and (max-width: 812px) {
@@ -24,33 +24,33 @@ export const SectionContainer = styled.section`
     }
   }
 
-  h2 {
+  > h2 {
     font: 700 2.5rem Poppins, sans-serif;
     line-height: 3.125rem;
-    color: ${(theme) => theme.blue400};
+    color: var(--blue-400);
     margin: 8px 0;
     @media only screen and (min-width: 375px) and (max-width: 812px) {
       font-size: 1.5rem;
     }
   }
 
-  h3 {
+  > h3 {
     font: 700 2rem Roboto Mono, monospace;
     line-height: 3rem;
   }
 
-  p {
+  > p {
     font: 700 1rem Roboto Mono, monospace;
     line-height: 1.5rem;
   }
 
-  div {
+  > div {
     a {
       text-decoration: none;
       font: 700 1rem Roboto Mono, monospace;
       line-height: 1.1875rem;
-      color: ${(props) => props.theme.blue400};
-      border: 3px solid ${(props) => props.theme.blue400};
+      color: var(--blue-400);
+      border: 3px solid var(--blue-400);
       display: inline-flex;
       appearance: none;
       -moz-box-align: center;
@@ -72,8 +72,8 @@ export const SectionContainer = styled.section`
       margin: 32px 0;
       text-transform: uppercase;
       &:hover {
-        background: ${(props) => props.theme.blue400};
-        color: ${(props) => props.theme.white};
+        background: var(--blue-400);
+        color: var(--white);
       }
     }
   }
