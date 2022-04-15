@@ -20,7 +20,9 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/_app.js",
-    "pages/index.js"
+    "pages/index.js",
+    "components/Header/index.jsx",
+    "components/Header/index.js"
   ],
   "exclude": ["node_modules"]
 }
