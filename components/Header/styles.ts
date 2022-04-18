@@ -24,6 +24,7 @@ export const Container = styled.header`
       list-style: none;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin: 0;
       padding: 0;
       width: 100%;
@@ -43,6 +44,25 @@ export const Container = styled.header`
         transition: 0.3s;
       }
     }
+  }
+`;
+
+export const Select = styled.select`
+  border: 1px solid #d1d5db;
+  color: var(--black);
+  font: 600 1.125rem Roboto Mono, monospace;
+  outline: none;
+  border-radius: 4px;
+  appearance: none;
+  padding: 0.375rem 0.75rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    background: transparent;
+  }
+
+  & > option {
+    color: var(--black);
   }
 `;
 

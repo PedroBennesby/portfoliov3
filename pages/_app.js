@@ -1,6 +1,7 @@
 import { GlobalStyles } from '../style/theme.config';
 import { appWithTranslation } from 'next-i18next';
 import Header from '../components/Header';
+import About from '../components/About';
 
 function MyPortfolio({ Component, pageProps }) {
   return (
@@ -8,6 +9,7 @@ function MyPortfolio({ Component, pageProps }) {
       <GlobalStyles />
       <Header />
       <Component {...pageProps} />;
+      <About />
     </>
   );
 }

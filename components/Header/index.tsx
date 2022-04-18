@@ -1,4 +1,5 @@
-import { styles, Container } from './styles';
+import { styles, Container, Select } from './styles';
+import { useRouter } from 'next/router';
 import Menu from 'react-burger-menu/lib/menus/slide';
 import Image from 'next/image';
 import useCheckMobileScreen from '../../hooks/useCheckMobileScreen';
@@ -7,12 +8,20 @@ import { useState } from 'react';
 const Header = () => {
   const isMobile = useCheckMobileScreen();
   const [isMenuOpen, handleMenu] = useState(false);
+  const router = useRouter();
 
   const handleCloseMenu = () => {
     handleMenu(false);
   };
   const handleStateChange = (state) => {
     handleMenu(state.isOpen);
+  };
+
+  const handleLocaleChange = (e) => {
+    const value = e.target.value;
+    router.push(router.route, router.asPath, {
+      locale: value,
+    });
   };
 
   return (
@@ -35,6 +44,10 @@ const Header = () => {
           <a href='#contact' onClick={handleCloseMenu}>
             Contato
           </a>
+          <Select onChange={handleLocaleChange} value={router.locale}>
+            <option value='en/'>English</option>
+            <option value='pt-BR/'>Português(BR)</option>
+          </Select>
         </Menu>
       ) : (
         <Container>
@@ -59,6 +72,12 @@ const Header = () => {
               </li>
               <li>
                 <a href='#contact'>Contato</a>
+              </li>
+              <li>
+                <Select onChange={handleLocaleChange} value={router.locale}>
+                  <option value='en'>English</option>
+                  <option value='pt-BR'>Português(BR)</option>
+                </Select>
               </li>
             </ul>
           </nav>
