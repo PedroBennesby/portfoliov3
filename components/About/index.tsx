@@ -4,7 +4,6 @@ import useLocaleData from '../../hooks/useLocaleData';
 
 import { Container } from './styles';
 import { SectionName } from '../../style/globals';
-import { useRouter } from 'next/router';
 
 import { useTranslation } from 'next-i18next';
 
@@ -12,14 +11,13 @@ const About = (props) => {
   const { description, image, studying } = props;
   const [descriptionLocated, setDescriptionLocated] = useState('');
   const { t } = useTranslation('about');
-  const { locale } = useRouter();
 
   const descriptionLocaleData = useLocaleData(description);
   const studyingLocaleData = useLocaleData(studying).Studying;
 
   useEffect(() => {
     setDescriptionLocated(descriptionLocaleData);
-  }, [descriptionLocaleData, locale]);
+  }, [descriptionLocaleData]);
 
   return (
     <Container id='about'>

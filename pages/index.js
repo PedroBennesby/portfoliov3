@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { request } from '../lib/datocms';
 import About from '../components/About';
+import Technologies from '../components/Technologies';
 
 export default function Home(props) {
   const [description, setDescription] = useState('');
@@ -43,6 +44,7 @@ export default function Home(props) {
         image={data.upload.url}
         studying={data.about._allStudyingLocales}
       />
+      <Technologies />
     </>
   );
 }
@@ -93,7 +95,11 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['home', 'about'])),
+      ...(await serverSideTranslations(locale, [
+        'home',
+        'about',
+        'technologies',
+      ])),
       data,
     },
   };
