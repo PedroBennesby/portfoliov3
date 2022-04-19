@@ -29,46 +29,4 @@ export const IconBoxContainer = styled.div`
       padding: 1rem 2rem;
     }
   }
-
-  .html:hover {
-    color: #e54c21;
-    transition: all 0.5s ease;
-  }
-  .css:hover {
-    color: #0b72b4;
-    transition: all 0.5s ease;
-  }
-  .sass:hover {
-    color: #ce679a;
-    transition: all 0.5s ease;
-  }
-
-  .javascript:hover {
-    color: #e4a227;
-    transition: all 0.5s ease;
-  }
-  .typescript:hover {
-    color: #2d79c7;
-    transition: all 0.5s ease;
-  }
-  .react:hover {
-    color: #2d79c7;
-    transition: all 0.5s ease;
-  }
-  .next:hover {
-    color: #a7a7a7;
-    transition: all 0.5s ease;
-  }
-  .dato:hover {
-    color: #ff6344;
-    transition: all 0.5s ease;
-  }
-  .styled:hover {
-    color: #865333;
-    transition: all 0.5s ease;
-  }
-  .chakra:hover {
-    color: #41c7bf;
-    transition: all 0.5s ease;
-  }
 `;

@@ -4,11 +4,13 @@ import Menu from 'react-burger-menu/lib/menus/slide';
 import Image from 'next/image';
 import useCheckMobileScreen from '../../hooks/useCheckMobileScreen';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 const Header = () => {
   const isMobile = useCheckMobileScreen();
   const [isMenuOpen, handleMenu] = useState(false);
   const router = useRouter();
+  const { t } = useTranslation('header');
 
   const handleCloseMenu = () => {
     handleMenu(false);
@@ -33,16 +35,16 @@ const Header = () => {
           onStateChange={handleStateChange}
         >
           <a href='#about' onClick={handleCloseMenu}>
-            Sobre
+            {t('about')}
           </a>
           <a href='#technologies' onClick={handleCloseMenu}>
-            Tecnologias
+            {t('technologies')}
           </a>
           <a href='#projects' onClick={handleCloseMenu}>
-            Projetos
+            {t('projects')}
           </a>
           <a href='#contact' onClick={handleCloseMenu}>
-            Contato
+            {t('contact')}
           </a>
           <Select onChange={handleLocaleChange} value={router.locale}>
             <option value='en/'>English</option>
@@ -62,16 +64,16 @@ const Header = () => {
           <nav>
             <ul>
               <li>
-                <a href='#about'>Sobre</a>
+                <a href='#about'>{t('about')}</a>
               </li>
               <li>
-                <a href='#technologies'>Tecnologias</a>
+                <a href='#technologies'>{t('technologies')}</a>
               </li>
               <li>
-                <a href='#projects'>Projetos</a>
+                <a href='#projects'>{t('projects')}</a>
               </li>
               <li>
-                <a href='#contact'>Contato</a>
+                <a href='#contact'>{t('contact')}</a>
               </li>
               <li>
                 <Select onChange={handleLocaleChange} value={router.locale}>

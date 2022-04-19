@@ -6,6 +6,8 @@ export const Container = styled.div`
   justify-content: center;
   margin: auto;
   width: 80vw;
+  transition: all 2s ease;
+
   @media only screen and (min-width: 375px) and (max-width: 812px) {
     width: 100%;
   }

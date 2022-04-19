@@ -5,6 +5,7 @@ export const Container = styled.section`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  transition: all 2s ease;
 
   & > div {
     display: flex;

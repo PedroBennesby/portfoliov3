@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { request } from '../lib/datocms';
 import About from '../components/About';
 import Technologies from '../components/Technologies';
+import Projects from '../components/Projects';
 
 export default function Home(props) {
   const [description, setDescription] = useState('');
@@ -45,6 +46,7 @@ export default function Home(props) {
         studying={data.about._allStudyingLocales}
       />
       <Technologies />
+      <Projects data={data.allProjects} />
     </>
   );
 }
@@ -71,19 +73,17 @@ const QUERY = ` {
       locale
       value
     }
-    _allTitleLocales {
-      locale
-      value
-    }
     projectCodeLink
     projectLink
     technologies
+    title
   }
   upload {
     url
     title
   }
 }
+
 
 `;
 
@@ -96,9 +96,11 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
+        'header',
         'home',
         'about',
         'technologies',
+        'projects',
       ])),
       data,
     },
